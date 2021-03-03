@@ -1,7 +1,5 @@
 package com.wen.contest2.problem5;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
