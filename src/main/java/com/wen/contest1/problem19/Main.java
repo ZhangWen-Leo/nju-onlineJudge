@@ -51,14 +51,15 @@ public class Main {
 //        for (int i = 0; i < T; i++) {
         while (scanner.hasNextLine()) {
             String[] nums = scanner.nextLine().split(" ");
-            int N = nums.length;
+            int N = Integer.parseInt(nums[0]);
             int[] arr = new int[N];
             for (int j = 0; j < N; j++) {
-                arr[j] = Integer.parseInt(nums[j]);
+                arr[j] = Integer.parseInt(nums[j+1]);
             }
 
             Main problem = new Main();
             arr = problem.quickSortWithoutRecursion(arr);
+//            problem.quickSort(arr);
             if (arr.length > 0) {
                 System.out.print(arr[0]);
                 for (int j = 1; j < arr.length; j++) {
