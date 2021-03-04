@@ -18,8 +18,12 @@ public class Main {
 
         for (int i = 0; i < len; i++) {
             if (arr[i] != queue.peek()) {
-                map.replace(arr[i], map.get(queue.peek()));
-                arr[map.get(queue.peek())] = arr[i];
+                int j = map.get(queue.peek());
+                int num = arr[j];
+                arr[j] = arr[i];
+                map.put(arr[j], j);
+                arr[i] = num;
+                map.put(arr[i], i);
                 res++;
             }
             queue.poll();
@@ -30,6 +34,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         int T = scanner.nextInt();
         for (int i = 0; i < T; i++) {
             int N = scanner.nextInt();
