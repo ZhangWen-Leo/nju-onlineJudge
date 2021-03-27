@@ -45,7 +45,13 @@ public class Main {
 
             Main problem = new Main();
 
-            System.out.println(problem.numOfSwaps(A));
+            System.out.print(problem.numOfSwaps(A));
+            if (i == T-1) {
+                System.out.println("");
+            }
+            else {
+                System.out.println(" ");
+            }
         }
     }
 
