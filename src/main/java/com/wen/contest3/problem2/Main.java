@@ -1,13 +1,8 @@
 package com.wen.contest3.problem2;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    /**
-     * 未通过，题目意思不明
-     * @param args
-     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -28,21 +23,18 @@ public class Main {
     }
 
     private int getResult(int[] arr, int left, int right, int k) {
-        int len = arr.length;
-        Arrays.sort(arr);
-        int start = 0;
-        while (start < len && arr[start] < left) {
-            start++;
-        }
 
-        while (k > 1 && start < len) {
-            while (start < len - 1 && arr[start] == arr[start + 1]) {
-                start++;
+        List<Integer> list = new ArrayList<>(right - left + 1);
+        for (int i = left - 1; i <= right - 1; i++) {
+            list.add(arr[i]);
+        }
+        list.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2;
             }
-            start++;
-            k--;
-        }
+        });
 
-        return arr[start];
+        return list.get(k - 1);
     }
 }
