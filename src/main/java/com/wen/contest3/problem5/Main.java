@@ -5,15 +5,16 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
-    /**
-     * 未通过，原因不明
-     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int T = Integer.parseInt(scanner.nextLine());
         for (int t = 0; t < T; t++) {
             String[] numsStr = scanner.nextLine().split("");
+            if (numsStr[0].equals("0")) {
+                System.out.println("Not Possible");
+                continue;
+            }
             Integer[] arr;
             boolean minus;
             if (numsStr[0].equals("-")) {
